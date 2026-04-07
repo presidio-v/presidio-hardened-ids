@@ -1,0 +1,75 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "presidio-hardened-ids"
+version = "0.1.0"
+description = "ML-based intrusion detection with adversarial evasion and hardening via retraining"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [{ name = "Vladimir Stantchev" }]
+keywords = ["intrusion-detection", "machine-learning", "adversarial", "security", "presidio"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "scikit-learn>=1.4",
+    "pandas>=2.1",
+    "numpy>=1.26",
+    "joblib>=1.3",
+]
+
+[project.optional-dependencies]
+dashboard = [
+    "streamlit>=1.33",
+    "matplotlib>=3.8",
+]
+dev = [
+    "pytest>=7.4",
+    "pytest-cov>=4.1",
+    "ruff>=0.4",
+    "streamlit>=1.33",
+    "matplotlib>=3.8",
+]
+
+[project.urls]
+Homepage = "https://github.com/presidio-v/presidio-hardened-ids"
+Repository = "https://github.com/presidio-v/presidio-hardened-ids"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/presidio_ids"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 99
+src = ["src"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "S", "B", "A", "C4", "SIM"]
+ignore = ["S101", "S311", "S301", "N802", "N803", "N806"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = ["S101", "S105"]
+"dashboard.py" = ["E402"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--tb=short -q"
+
+[tool.coverage.run]
+source = ["src"]
+branch = true
+
+[tool.coverage.report]
+fail_under = 80
+show_missing = true
