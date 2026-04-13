@@ -23,7 +23,7 @@ classifiers = [
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
 ]
 dependencies = [
-    "scikit-learn>=1.4",
+    "scikit-learn>=1.7.2",
     "pandas>=2.1",
     "numpy>=1.26",
     "joblib>=1.3",
