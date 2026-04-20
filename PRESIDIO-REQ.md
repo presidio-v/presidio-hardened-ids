@@ -52,3 +52,8 @@ dependencies and works on any laptop without additional services.
 `st.experimental_rerun()` (deprecated in Streamlit ≥1.28).
 
 <!-- Deliver the complete working project ready for GitHub publish. -->
+
+## SDLC
+
+These requirements are delivered under the family-wide Presidio SDLC:
+<https://github.com/presidio-v/presidio-hardened-docs/blob/main/sdlc/sdlc-report.md>.
