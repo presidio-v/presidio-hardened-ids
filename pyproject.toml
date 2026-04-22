@@ -36,7 +36,7 @@ dashboard = [
 ]
 dev = [
     "pytest>=7.4",
-    "pytest-cov>=4.1",
+    "pytest-cov>=7.1.0",
     "ruff>=0.4",
     "streamlit>=1.33",
     "matplotlib>=3.8",
