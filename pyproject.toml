@@ -31,14 +31,14 @@ dependencies = [
 
 [project.optional-dependencies]
 dashboard = [
-    "streamlit>=1.33",
+    "streamlit>=1.56.0",
     "matplotlib>=3.8",
 ]
 dev = [
     "pytest>=7.4",
     "pytest-cov>=4.1",
     "ruff>=0.4",
-    "streamlit>=1.33",
+    "streamlit>=1.56.0",
     "matplotlib>=3.8",
 ]
 
