@@ -19,3 +19,10 @@ updates:
     labels:
       - dependencies
       - ci
+    groups:
+      # codeql-action's init/autobuild/analyze steps must run at the same
+      # version; separate PRs per sub-action produce a CodeQL configuration
+      # error, so they have to be bumped together.
+      codeql-action:
+        patterns:
+          - "github/codeql-action*"
