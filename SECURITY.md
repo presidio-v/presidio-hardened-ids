@@ -27,7 +27,7 @@ within 30 days of a confirmed vulnerability.
 |---|---|
 | **Input validation** | All CLI parameters are type-checked and bounds-validated |
 | **No shell execution** | All computation is pure Python/NumPy/sklearn; no subprocess calls |
-| **Dependency audit** | `pip-audit` runs on import (non-blocking) |
+| **Dependency audit** | `pip-audit` runs on import (non-blocking); blocking `pip-audit` in CI on every PR and push to `main` |
 | **Security event logging** | Structured events for fit, evaluate, save, load, and evasion |
 | **No network I/O** | Traffic is synthetic; dashboard reads local files only |
 | **Deterministic generation** | All random operations accept a seed for reproducibility |
